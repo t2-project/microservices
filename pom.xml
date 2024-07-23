@@ -3,6 +3,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>3.2.8</version>
+        <relativePath/> <!-- lookup parent from repository -->
+    </parent>
+
     <groupId>de.unistuttgart.t2</groupId>
     <artifactId>microservices</artifactId>
     <packaging>pom</packaging>
@@ -18,7 +25,6 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
 
         <!-- Dependencies versioning -->
-        <spring-boot.version>3.2.8</spring-boot.version>
         <eventuate-tram.version>0.34.0.RELEASE</eventuate-tram.version>
         <eventuate-tram-sagas-participant.version>0.23.0.RELEASE</eventuate-tram-sagas-participant.version>
 		<jaeger.version>3.3.1</jaeger.version>
@@ -27,10 +33,7 @@
 		<springdoc-openapi.version>2.5.0</springdoc-openapi.version>
         <apache-httpclient.version>4.5.14</apache-httpclient.version>
 		<flapdoodle-mongodb.version>4.16.1</flapdoodle-mongodb.version>
-
-        <!-- Build dependencies -->
         <jacoco.version>0.8.11</jacoco.version>
-        <spring-boot-maven-plugin.version>3.3.2</spring-boot-maven-plugin.version>
 
         <!-- Other properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -63,15 +66,6 @@
                 <groupId>${project.groupId}</groupId>
                 <artifactId>common</artifactId>
                 <version>${project.version}</version>
-            </dependency>
-
-            <!-- Spring -->
-            <dependency>
-                <groupId>org.springframework.boot</groupId>
-                <artifactId>spring-boot-dependencies</artifactId>
-                <type>pom</type>
-                <version>${spring-boot.version}</version>
-                <scope>import</scope>
             </dependency>
 
             <!-- monitoring & tracing -->
@@ -182,14 +176,6 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>${spring-boot-maven-plugin.version}</version>
-                    <executions>
-                        <execution>
-                            <goals>
-                                <goal>repackage</goal>
-                            </goals>
-                        </execution>
-                    </executions>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
