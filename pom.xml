@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
@@ -13,31 +12,34 @@
     <url>https://t2-documentation.readthedocs.io</url>
 
     <properties>
+        <!-- Java version -->
+        <java.version>17</java.version>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+
         <!-- Dependencies versioning -->
         <spring-boot.version>3.2.8</spring-boot.version>
         <eventuate-tram.version>0.34.0.RELEASE</eventuate-tram.version>
         <eventuate-tram-sagas-participant.version>0.23.0.RELEASE</eventuate-tram-sagas-participant.version>
 		<jaeger.version>3.3.1</jaeger.version>
 		<resilience4j.version>2.2.0</resilience4j.version>
-        <jacoco.version>0.8.11</jacoco.version>
-		<micrometer.version>1.12.4</micrometer.version>
-		<springdoc-openapi.version>2.4.0</springdoc-openapi.version>
+		<micrometer.version>1.13.2</micrometer.version>
+		<springdoc-openapi.version>2.5.0</springdoc-openapi.version>
         <apache-httpclient.version>4.5.14</apache-httpclient.version>
-		<flapdoodle-mongodb.version>4.12.2</flapdoodle-mongodb.version>
+		<flapdoodle-mongodb.version>4.16.1</flapdoodle-mongodb.version>
 
-        <!-- Java version -->
-        <java.version>17</java.version>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
+        <!-- Build dependencies -->
+        <jacoco.version>0.8.11</jacoco.version>
+        <spring-boot-maven-plugin.version>3.3.2</spring-boot-maven-plugin.version>
 
         <!-- Other properties -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
     <scm>
-        <connection>scm:git:https://github.com/t2-project/t2-project.git</connection>
-        <developerConnection>scm:git:git@github.com:t2-project/t2-project.git</developerConnection>
-        <url>https://github.com/t2-project/t2-project.git</url>
+        <connection>scm:git:https://github.com/t2-project/microservices.git</connection>
+        <developerConnection>scm:git:git@github.com:t2-project/microservices.git</developerConnection>
+        <url>https://github.com/t2-project/microservices.git</url>
     </scm>
 
     <modules>
@@ -180,7 +182,7 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>3.3.2</version>
+                    <version>${spring-boot-maven-plugin.version}</version>
                 </plugin>
                 <plugin>
                     <groupId>org.jacoco</groupId>
