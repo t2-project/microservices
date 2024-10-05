@@ -3,9 +3,7 @@
 Microservice reference architecture loosely based on the [TeaStore Application](https://github.com/DescartesResearch/TeaStore).
 This repository is the parent project for all microservices.
 
-## Documentation
-
-Available on https://t2-documentation.readthedocs.io/ or in the corresponding microservices.
+The documentation is available on https://t2-documentation.readthedocs.io/en/latest/microservices/index.html
 
 ## Cloning the project
 
@@ -24,3 +22,7 @@ git clone --recursive git@github.com:t2-project/t2-project.git
 ```bash
 git submodule update --recursive --remote
 ```
+
+## Build and Run
+
+Refer to the [Deployment documentation](https://t2-documentation.readthedocs.io/en/latest/microservices/deploy.html) on how to build, run or deploy the T2-Modulith application.
